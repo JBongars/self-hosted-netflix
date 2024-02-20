@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  streama:
+    image: strema
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    volumes:
+      - ${STREAMA_WORKDIR}:/etc/streama
+      - ${STREAMA_WORKDIR}/streama.mv.db:/streama/streama.mv.db
+      - ${STREAMA_DATA_PATH}:/usr/home/streama/data
+      - ${TORRENT_VOLUME_PATH}:/usr/home/torrents
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env

@@ -1,1 +1,1 @@
-# Self hosted Netflix using Strema
+# Self hosted Netflix using Streama
